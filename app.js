@@ -88,11 +88,28 @@ console.log("App running successfully, No error.");
         // code to store user data on browser using localStorage Web API and display on the feed ✅
 
         const form=document.querySelector("form.register-form");
-        const userContainer=document.querySelector(".user-container");   
+        const formWrapper=document.querySelector(".form-wrapper");
+        const userContainer=document.querySelector(".user-container");  
+        const registerBtn=document.querySelector("button.registerBtn");
+
+        registerBtn.addEventListener("click", ()=>{
+            formWrapper.classList.toggle("active");
+            if(formWrapper.classList.contains("active")){
+                registerBtn.style.background="rgb(240, 2, 49)";
+                registerBtn.innerHTML="Cancel &times;";
+            }else{
+                registerBtn.style.background="rgb(19, 111, 232)";
+                registerBtn.textContent="Create account";
+            }
+        });
           
         let userData;
 
         form.addEventListener("submit",(event)=>{
+            formWrapper.classList.toggle("active");
+            registerBtn.style.background="rgb(19, 111, 232)";
+            registerBtn.textContent="Create account";
+            
             event.preventDefault();
             userData=JSON.parse(localStorage.getItem("userInfo")) ?? [];
             
