@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+
+:root{
+            --base-color:rgb(219, 225, 255);
+            --secondary-color:rgb(74, 90, 255);
+            --text-color:rgb(4, 5, 21);
+            --second-text-color:rgb(0, 8, 95);
+        }
+       .darkMode{
+          --base-color:rgb(3, 3, 19);
+          --secondary-color:rgb(6, 9, 48);
+          --text-color:rgb(238, 238, 238);
+          --second-text-color:rgb(0, 179, 255);
+       }
+        body{
+            /* background-color: rgb(7, 10, 40); */
+            background-color: var(--base-color);
+            transition: 0.5s ease-in-out;
+        }
+       .networkStatus{
+        position: fixed;
+        bottom:20px;
+        left:-100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 240px;
+        height: 50px;
+        margin: 0;
+        padding: 20px;
+        font-family: sans-serif;
+        font-size:1.3rem;
+        color:white;
+        font-weight:400;
+        border-radius: 12px;
+        }
+        .networkStatus.active{
+            animation: slideLeft 3.2s ease-in-out;
+        }
+        @keyframes slideLeft{
+            0%{left:-100%;}
+            15%,70%{left:60px;}
+            78%{left:40px;}
+            88%{left:60px;}
+            100%{left:-100%;}
+        }
+
+        .register-form{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            width: 420px;
+            font-family: sans-serif;
+            margin: 50px auto;
+            padding: 40px 36px;
+            user-select: none;
+            border-radius: 12px;
+            background-color: var(--secondary-color);
+            box-shadow: 0 0 14px 4px rgba(81, 156, 255, 0.2);
+        }
+        .register-form h2{
+            color: var(--text-color);
+            text-align: center;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .register-form label{
+            width: 100%;
+            display: flex;
+            font-size: 16px;
+            margin: 30px 0 8px 0;
+            box-sizing: border-box;
+            color: white;
+            letter-spacing: 0.6px;
+        }
+        .register-form input{
+            font-size: 16px;
+            margin:0;
+            padding: 4px 14px 4px 0px;
+            outline: none;
+            border: none;
+            color: white;
+            /* border-radius: 4px; */
+            background-color: transparent;
+            border-bottom: 2px solid white;
+        }
+        .register-form input[type="file"]{
+            border: none !important;
+            font-size: 14px;
+        }
+        .register-form input:valid{
+            color: var(--text-color);
+            border-bottom: 2px solid var(--text-color);
+        }
+        .register-form input:focus{
+            border-bottom: 2px solid var(--text-color);
+        }
+        .register-form button{
+            background-color: rgba(24, 25, 25, 0.4);
+            margin-top: 30px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 10px 14px;
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 100px;
+            border: 1.5px solid white;
+        }
+        .register-form button:hover{
+            background-color: var(--second-text-color);
+            border: 1.5px solid var(--second-text-color);
+        }
+
+        .register-form label span{
+            margin-left: 6px;
+            font-family: tahoma;
+            color: var(--text-color);
+        }
+
+        .user-container{
+            width: 100vw;
+            display: flex;
+            margin: 50px auto;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 40px;  
+            justify-content:center;
+        }
+        .user-container .user-card{
+            flex: 1;
+            position: relative;
+            max-width: 380px;
+            padding: 36px 40px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            user-select: none;
+            font-family: sans-serif;
+            letter-spacing: 0.6px;
+            border: 1.5px solid var(--secondary-color);
+            box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.2);
+        }
+        .user-container .user-card span{
+            position: absolute;
+            display: block;
+            top: 15px;
+            right: 16px;
+            width: 30px;
+            height: 30px;
+            padding: 2px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            color: white;
+            background-color: rgba(81, 156, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .user-container .user-card .editButton{
+            position: absolute;
+            display: block;
+            top: 15px;
+            right: 65px;
+            padding: 7px 22px;
+            font-size: 14px;
+            color: white;
+            letter-spacing: 1px;
+            font-family: sans-serif;
+            background-color: rgba(81, 156, 255, 0.2);
+            border-radius: 22px;
+            border: none;
+            outline: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .user-card .editButton:hover{
+            background-color: var(--second-text-color);
+        }
+        .user-card span:hover{
+           background-color: rgba(255, 57, 57, 0.7);
+        }
+        .user-container .user-card label{
+            width: 100%;
+            display: flex;
+            font-size: 14px;
+            margin: 15px 0 6px 0;
+            box-sizing: border-box;
+            color: var(--text-color);
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .user-card label:first-child{
+            margin: 0 0 6px 0;
+        }
+        .user-container .user-card p{
+            color: var(--second-text-color);
+            font-size: 14px;
+        }
+
+        .user-container .userHeader{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px 20px;
+            border: 2px solid var(--second-text-color);
+            border-radius: 6px;
+            padding: 14px 30px;
+            margin: 50px auto;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .update-form label{
+            font-family: sans-serif;
+            font-size: 14px;
+            margin: 0 4px;
+            box-sizing: border-box;
+            color: var(--text-color);
+            letter-spacing: 0.6px;
+        }
+        .update-form input{
+            font-size: 14px;
+            margin:0;
+            padding: 8px 8px 8px 10px;
+            outline: none;
+            border: none;
+            color: black;
+            border-radius: 3px;
+        }
+        .update-form input[name="phone"]{
+            width: 120px;
+        }
+        .update-form button{
+            background-color: rgba(0, 70, 160, 0.7);
+            margin-left: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 14px;
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .update-form button:hover{
+            background-color: var(--secondary-color);
+        }
+
+        .theme-mode{
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            background-color: rgba(3, 3, 23, 0.3);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 8px 20px;
+            color: white;
+            font-size: 14px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .theme-mode:hover{
+            background-color: rgba(81, 156, 255, 0.4);
+        }
+
+        .theme-box{
+          position: fixed;
+          bottom: 15px;
+          right: 15px;
+          background-color: rgb(10, 12, 32);
+          border-radius: 8px;
+          padding: 14px;
+          z-index: 100;
+        }
+        .theme-box .colors{
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin: 0 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .theme-box button.active{
+            transform: scale(1.1);
+            border:2px solid white
+        }
+        .colors.blue{
+            background-color: rgb(12, 113, 255);
+        }
+        .colors.crimson{
+            background-color: rgb(255, 0, 102);
+        }
+        .colors.orange{
+            background-color: rgb(255, 136, 0);
+        }
+
+        .blue-theme{
+            --base-color:rgb(103, 166, 255);
+            --secondary-color:rgb(0, 71, 171);
+            --text-color:rgb(0, 7, 78);
+            --second-text-color:rgb(151, 160, 255);
+        }
+        .crimson-theme{
+            --base-color:rgb(255, 170, 209);
+            --secondary-color:rgb(255, 6, 64);
+            --text-color:rgb(71, 0, 31);
+            --second-text-color:rgb(255, 145, 213);
+        }
+        .orange-theme{
+            --base-color:rgb(255, 167, 94);
+            --secondary-color:rgb(209, 94, 0);
+            --text-color:rgb(88, 47, 0);
+            --second-text-color:rgb(255, 181, 97);
+        }
+
+        /* .searchBox{
+            width: 94%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 30px 60px;
+            margin:30px auto;
+            border: 2px solid aqua;
+        } */
+
+        /* .seacrhBox input{
+            width: 250px;
+            background-color: rgba(255,255,255,0.2);
+            font-size: 15px;
+            margin:0;
+            padding: 8px 8px 8px 10px;
+            outline: none;
+            border: none;
+            border: 1px solid transparent;
+            color: whitesmoke;
+            border-radius: 3px;
+        }
+        .seacrhBox input::placeholder{
+            color: whitesmoke;
+        }
+        .seacrhBox input:focus{
+            border: 1px solid var(--second-text-color);
+        }
+        .seacrhBox button{
+            background-color: rgba(0, 70, 160, 0.7);
+            margin-left: 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 10px 14px;
+            outline: none;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .seacrhBox button:hover{
+            background-color: var(--secondary-color);
+        } */

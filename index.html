@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LocalStorage in JavaScript</title>
+</head>
+
+<body class="">
+    
+        <h2 class="networkStatus"></h2>
+
+        <div class="colorPallete" style="display:flex;justify-content:center;align-items:center;height: 350px;margin: 20px 8px;border-radius: 14px;font-size: 2rem;text-transform: uppercase;color:whitesmoke;font-family: sans-serif;transition: 0.4s ease;user-select: none;">copy</div>
+
+        <button onclick="callItem()" style="margin: 8px 15px;padding:10px 22px;border-radius: 6px;font-size: 14px;text-transform: uppercase;background:linear-gradient(30deg, rgb(28, 207, 222), rgb(43, 231, 4));color:whitesmoke;font-family: sans-serif;border:none;outline: none;">Add Item</button>
+        <button onclick="removeItem()" style="margin: 8px 7px;padding:10px 22px;border-radius: 6px;font-size: 14px;text-transform: uppercase;background:linear-gradient(30deg, rgb(238, 40, 177), rgb(252, 66, 43));color:whitesmoke;font-family: sans-serif;border:none;outline: none;">Remove Item</button>
+
+        <button onclick="clearStorage()" style="margin: 8px 15px;padding:10px 22px;border-radius: 6px;font-size: 14px;text-transform: uppercase;background:linear-gradient(30deg, rgb(12, 124, 230), rgb(12, 210, 117));color:whitesmoke;font-family: sans-serif;border:none;outline: none;">Clear Storage</button>
+
+        <div class="theme-mode">Dark Mode</div>
+
+        <div class="theme-box">
+            <button class="colors blue active" id="blue"></button>
+            <button class="colors crimson" id="crimson"></button>
+            <button class="colors orange" id="orange"></button>
+        </div>
+
+        
+
+        <!---------Register Form-------->
+        <form action="" method="POST" class="register-form" name="register">
+
+            <h2>Register Form</h2>
+            
+            <label for="uname">Name <span>*</span></label>
+            <input type="text" name="uname" id="uname" required autocomplete="off">
+
+            <label for="email">Email <span>*</span></label>
+            <input type="email" name="email" id="email" required autocomplete="off">
+
+            <label for="phone">Phone <span>*</span></label>
+            <input type="text" name="phone" id="phone" maxlength="10" required autocomplete="off">
+
+            <label for="address">Address <span>*</span></label>
+            <input type="text" name="address" id="address" required autocomplete="off">
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <section class="user-container">
+           
+        </section>
+
+        <script src="app.js" defer></script>
+    
+    
+</body>
+</html>
